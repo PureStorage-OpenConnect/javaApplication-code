@@ -1,0 +1,5 @@
+bases:
+  - ../../base
+patches:
+  - replica-count.yaml
+  - resource-limit.yaml

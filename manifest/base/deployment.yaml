@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maven-app-deploy
+  labels:
+    app: maven-app-app
+  annotations:
+spec:
+  selector:
+    matchLabels:
+      app: maven-app-app
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: maven-app-app
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: maven-app-app
+        image: sn1-r620-a04-03.puretec.purestorage.com/springboot/maven-master:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "65Mi"
+            cpu: "10m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"

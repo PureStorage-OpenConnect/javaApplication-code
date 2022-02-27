@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - sn1-r620-a04-03.puretec.purestorage.com/springboot/maven-master:ci-for-java-app-master-branch-ndhpf

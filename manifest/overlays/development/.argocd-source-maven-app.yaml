@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - sn1-r620-a04-03.puretec.purestorage.com/springboot/maven-master:ci-master-branch-8n4nb
