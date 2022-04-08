@@ -24,7 +24,7 @@ spec:
       - name: regcred
       containers:
       - name: maven-app-app
-        image: sn1-r620-a04-03.puretec.purestorage.com/springboot/maven-master:latest
+        image: sn1-r620-a04-03.puretec.purestorage.com/springboot/springboot-master:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
