@@ -2,13 +2,13 @@ FROM openjdk:14.0-jdk-buster
 
 WORKDIR /work
 
-COPY mvnw /work/mvnw
-COPY .mvn /work/.mvn
-COPY pom.xml /work/pom.xml
+COPY code/mvnw /work/mvnw
+COPY code/.mvn /work/.mvn
+COPY code/pom.xml /work/pom.xml
 
 RUN ./mvnw dependency:go-offline
 
-COPY . /work/
+COPY code/ /work/
 RUN ./mvnw install
 
 RUN chmod +x /work/target/demo-0.0.1-SNAPSHOT.jar
